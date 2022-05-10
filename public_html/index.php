@@ -1,5 +1,5 @@
 <?php
-    // ...
+   session_start();
 ?>
 
 <!DOCTYPE html>
@@ -18,14 +18,52 @@
 
         <div class="container py-3">
 
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Soumettre le mot de passe
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Password</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                <form  action="index.php" method="GET">
+                <input class="form-control" name="form" id="exampleFormControlTextarea1" rows="1" value="<?php 
+                    echo $_GET['password']; 
+                    ?>"> 
+                </form>    
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" name="save">Soumettre</button>
+                    <?php 
+                    // if (isset($_POST['save'])) {
+                    //     $form = $_POST['form'];
+                    //     $new = $_GET;
+                    //     $new['password'] = $form;
+                    //     $new_result = http_build_query($new);
+                    //     echo $_SERVER['PHP_SELF'];
+                    //     echo $new_result;
+                    // }
+                    ?>
+                </div>
+                </div>
+            </div>
+            </div>
+
             <?php
 
             if (isset($_GET['password'])) {
 
-                $password = $_GET['password'];
+                $password = $_GET['password']; 
 
                 // I use my personal function with my namespace
-                // ...
+                
+                include "./functions/cecile.php";
 
             }
             else {
@@ -41,7 +79,7 @@
 
                 <?php
             }
-
+            
             ?>
 
         </div>
