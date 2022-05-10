@@ -34,20 +34,20 @@
                 </div>
                 <div class="modal-body">
                 <form  action="index.php?password=" method="GET">
-                <input class="form-control" name="password" id="exampleFormControlTextarea1" rows="1" value="<?php 
+                <input class="form-control" type="text" name="password" id="password" value="<?php 
                     echo $_GET['password']; 
-                    ?>"> 
-                </form>    
+                    ?>">    
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-                    <button type="submit" data-bs-dismiss="modal" class="btn btn-primary"  name="save">Tester</button>
+                    <button name="save" type="submit" class="btn btn-primary">Tester</button>
+                    </form> 
                     <?php 
-                    if (isset($_POST['save'])) {
-                        $url_actuel = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-                        $decoupe = explode("?", $url_actuel);
-                        $url_voulu = $decoupe[0].'?password='.$_GET['password'];
-                    }
+                        if(isset($_POST['save'])){
+                            $url_actuel = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+                            $decoupe = explode("?", $url_actuel);
+                            $url_voulu = $decoupe[0].'?password='.$_GET['password'];
+                        }
                     ?>
                 </div>
                 </div>
