@@ -87,8 +87,6 @@ function checkPassword($password) {
         }    
 }   
     
-    checkPassword($password);
-    
 ?>
 
 

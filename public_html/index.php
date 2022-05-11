@@ -1,6 +1,5 @@
 <?php
-   session_start();
-   
+   include_once("functions/cecile.php");
 ?>
 
 <!DOCTYPE html>
@@ -62,7 +61,7 @@
 
                 // I use my personal function with my namespace
                 
-                include "./functions/cecile.php";
+                cecile\checkPassword($password); 
 
             }
             else {
