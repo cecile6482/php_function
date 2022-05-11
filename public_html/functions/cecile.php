@@ -54,7 +54,8 @@ function checkPassword($password) {
         if(!$num || !$min || !$maj || !$carspe || !$douze ) {
             
             if($num || $min || $maj || $carspe || !$douze ) {
-            echo '<ul class="list-group position-absolute top-50 start-50 translate-middle w-50">
+            echo '<div class="mx-auto" style="width: 400px;">
+            <br><ul class="list-group text-center w-100">
             <li class="list-group-item active" aria-current="true">Le mot de passe doit contenir au moins:</li>';
             }
             
@@ -79,11 +80,11 @@ function checkPassword($password) {
                 echo '<li class="list-group-item">12 caractères</li>';
             }
 
-            echo '</ul>';
+            echo '</ul></div>';
         } 
         else {
             
-            echo '<h6 class="text-center btn btn-success position-absolute top-50 start-50 translate-middle py-2 px-3">OK</h6>';
+            echo '<div class="mx-auto" style="width: 50px;"><br><br><h6 class="text-center btn btn-success translate-middle py-2 px-3">OK</h6></div>';
         }    
 }   
     
